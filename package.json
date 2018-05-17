@@ -1,0 +1,31 @@
+{
+  "name": "rc-async-component",
+  "version": "1.0.1",
+  "description": "A react async component for lazy import component.",
+  "main": "index.js",
+  "repository": "https://github.com/luffyZh/rc-async-component.git",
+  "author": "luffyZhou",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --progress --mode development",
+    "build": "webpack --progress",
+    "watch": "webpack --watch --progress"
+  },
+  "keywords": [
+    "react",
+    "async",
+    "lazyload",
+    "webpack"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "react": "^16.3.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
