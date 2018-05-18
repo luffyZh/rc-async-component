@@ -3,10 +3,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production', 
-  
-  externals: {
-    'react': 'react'
-  },
 
   entry: {
     index: './index.js'
@@ -23,7 +19,7 @@ module.exports = {
       { 
         test: /\.js$/, 
         exclude: /node_modules/, 
-        loader: 'babel-loader?presets[]=env&presets[]=react&presets[]=stage-1' 
+        loader: 'babel-loader?presets[]=env&presets[]=es2015&presets[]=react&presets[]=stage-1' 
       }
     ]
   },
