@@ -1,8 +1,8 @@
 {
   "name": "rc-async-component",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A react async component for lazy import component.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/luffyZh/rc-async-component.git",
   "author": "luffyZhou",
   "license": "MIT",
