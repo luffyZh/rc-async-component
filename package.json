@@ -1,6 +1,6 @@
 {
   "name": "rc-async-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A react async component for lazy import component.",
   "main": "index.js",
   "repository": "https://github.com/luffyZh/rc-async-component.git",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack --progress --mode development",
-    "build": "webpack --progress",
+    "build": "webpack -p --progress",
     "watch": "webpack --watch --progress"
   },
   "keywords": [
