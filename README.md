@@ -1,5 +1,5 @@
 # rc-async-component
-A react async component for lazy import component.
+A react async component for lazy load component.
 
 ### Install
 ```
