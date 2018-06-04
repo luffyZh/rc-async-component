@@ -4,14 +4,17 @@
   "private": true,
   "dependencies": {
     "braft-editor": "^1.9.3",
+    "gh-pages": "^1.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "https://luffyzh.github.io/rc-component-async"
 }

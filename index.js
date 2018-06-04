@@ -1,6 +1,6 @@
 import React from 'react';
 
-const asyncComponent = (loadComponent, instance) => (
+const asyncComponent = (lazyLoadComponent, instance) => (
   class AsyncComponent extends React.Component {
     state = {
         Component: null,
@@ -12,13 +12,13 @@ const asyncComponent = (loadComponent, instance) => (
             return;
         }
   
-        loadComponent()
+        lazyLoadComponent()
             .then(module => module.default)
             .then((Component) => {
                 this.setState({ Component });
             })
             .catch((err) => {
-                console.error(`Cannot load component in <AsyncComponent />`);
+                console.error(`lazy load <AsyncComponent /> make some error!`);
                 throw err;
             });
     }

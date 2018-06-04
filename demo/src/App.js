@@ -7,7 +7,7 @@ import NoInstanceText from './components/NoInstanceText';
 class App extends Component {
   
   addContent = () => {
-    this.editorInstance.compInstance.setContent('<p>111</p>');
+    this.editorInstance.compInstance.setContent('<p>我是通过获取实例插入的内容</p>');
   }
 
   render() {
