@@ -16,5 +16,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://luffyzh.github.io/rc-component-async"
+  "homepage": "https://luffyzh.github.io/rc-async-component"
 }
