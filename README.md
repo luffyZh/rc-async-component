@@ -18,13 +18,38 @@ v1.0.7:
   const BestInput = asyncComponent(() => import('react-best-input'));
 
   export default BestInput;
-  
+```
+```
   // the component has instance and methods
   import asyncComponent from 'rc-async-component';
 
-  const BestInput = asyncComponent(() => import('braft-editor'), true); // set the second param true
+  const BrafEditor = asyncComponent(() => import('braft-editor'), true); // set the second param true
 
-  export default BestInput;
+  export default BraftEditor;
+  
+  // get the instance
+  ...
+  import BraftEditor from '../../components/BraftEditor';
+  ...
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputErrorShow: 'none',
+      inputContent: '',
+    };
+    this.braftInstance = this.editorInstance.compInstance; // get the instance
+  }
+  
+  submit = () => {
+    this.braftInstance.setContent('<p>222</p>');
+  }
+  
+  render（） {
+    return (
+       <BraftEditor ref={instance => (this.editorInstance = instance)} {...editorProps} />
+    )
+  }
 ```  
 
 > Please run the demo for the details.
