@@ -10,6 +10,7 @@ A react async component for lazy load component.
 ### Version
 v1.0.7:
   - support async get component's instance and use methods.
+
 ### Usage
 ```
   // no instance component
@@ -20,10 +21,23 @@ v1.0.7:
   export default BestInput;
 ```
 ```
+ // the loading component
+ import asyncComponent from 'rc-async-component';
+
+const BestInput = asyncComponent(() => import('react-best-input'), {
+  loading: () => <span>加载组件...</span>
+});
+
+export default BestInput;
+```
+
+```
   // the component has instance and methods
   import asyncComponent from 'rc-async-component';
 
-  const BrafEditor = asyncComponent(() => import('braft-editor'), true); // set the second param true
+  const BrafEditor = asyncComponent(() => import('braft-editor'), {
+    instance: true
+  }); // set the second param true
 
   export default BraftEditor;
   
@@ -51,5 +65,13 @@ v1.0.7:
     )
   }
 ```  
+
+### Props
+**asyncComponent(() => import('react-best-input'), { ...Props });**
+
+| Props | Description | Type | Default |
+| ------ | ------ | ------ |
+| instance | The <AsyncComponent> has itself instance to use | Boolean | false |
+| loading | The loading component will show when <AsyncComponent> is not loaded on the page! | null |
 
 > Please run the demo for the details.
