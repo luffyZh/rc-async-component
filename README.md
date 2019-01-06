@@ -10,6 +10,8 @@ A react async component for lazy load component.
 ### Version
 v1.0.7:
   - support async get component's instance and use methods.
+v1.1.0
+  - add loading component 
 
 ### Usage
 ```
@@ -67,11 +69,11 @@ export default BestInput;
 ```  
 
 ### Props
-**asyncComponent(() => import('react-best-input'), { ...Props });**
+asyncComponent(() => import('react-best-input'), { ...Props });
 
-| Props | Description | Type | Default |
-| ------ | ------ | ------ |
-| instance | The <AsyncComponent> has itself instance to use | Boolean | false |
-| loading | The loading component will show when <AsyncComponent> is not loaded on the page! | null |
+Props | Description | Type | Default
+------------ | ------------- | ------------ | -------------
+loading | The loading component will show when <AsyncComponent> is not loaded on the page! | function\|string | null
+instance | The <AsyncComponent> has itself instance to use | bool | false
 
 > Please run the demo for the details.
