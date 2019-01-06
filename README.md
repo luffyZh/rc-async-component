@@ -8,10 +8,13 @@ A react async component for lazy load component.
   yarn add rc-async-component
 ```
 ### Version
+
 v1.0.7:
   - support async get component's instance and use methods.
+
 v1.1.0
-  - add loading component 
+  - change the usage
+  - add loading component
 
 ### Usage
 ```
