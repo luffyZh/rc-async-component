@@ -3,19 +3,18 @@ import React, { Component } from 'react';
 const DefaultLoading = () => <span style={{ fontSize: '12px', color: '#888' }}>正在加载组件...</span>;
 
 const checkLoading = loadingComp => {
-  if (typeof loadingComp !== 'string' || typeof loadingComp !== 'function') {
-    console.error(`The loading component is invalid, please make sure it's a valid react component!`);
+  if (typeof loadingComp !== 'string' && typeof loadingComp !== 'function') {
     return DefaultLoading;
   }
   return loadingComp;
-} 
+}
 
-const asyncComponent = (loadComponent, paramObj = { instance: false, loading: null }) => (
+const asyncComponent = (loadComponent, options) => (
   class AsyncComponent extends Component {
     state = {
       Component: null,
-      instance: paramObj.instance,
-      Loading: paramObj.loading ? checkLoading(paramObj.loading) : DefaultLoading
+      instance: options && options.instance,
+      loading: options && options.loading
     }
   
     componentDidMount() {
@@ -39,12 +38,13 @@ const asyncComponent = (loadComponent, paramObj = { instance: false, loading: nu
     }
   
     render() {
-      const { Component, instance, Loading } = this.state;
+      const { Component, instance, loading } = this.state;
+      const LoadingComp = checkLoading(loading); 
       return Component          
         ? (instance
           ? <Component ref={(instance) => this.compInstance = instance} {...this.props} />
           : <Component {...this.props} />)
-        : <Loading />;
+        : <LoadingComp />;
     }
   }
 )
